@@ -5,6 +5,7 @@ const port = process.env.PORT || 3001;
 require('firebase/compat/firestore');
 const firebase = require('firebase/compat/app'); 
 const cors = require('cors');
+const fs = require('fs');
 
 app.use(cors({ origin: true }));
 
@@ -103,6 +104,21 @@ app.get('/spotify', async (req, res) => {
     }
 
 });
+
+app.get('/blogs', async (req, res) => {
+    res.send(fs.readFileSync('./blogs.json', 'utf-8'))
+})
+
+app.get('/blogs/:id', async (req, res) => {
+    const blogs = JSON.parse(fs.readFileSync('./blogs.json', 'utf-8'))
+    console.log (blogs.blogs)
+    const blog = blogs.blogs.find(o => o.id.toString() == req.params.id);
+    if (blog) {
+        res.send({blog:fs.readFileSync(`./blogs/${blog.filename}`, 'utf-8'), ...blog})
+    } else {
+        res.status(404).send('Not found')
+    }
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);

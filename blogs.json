@@ -1,0 +1,12 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "title": "Blog 1",
+            "description": "Content 1",
+            "type": "game review",
+            "filename": "blog1.md",
+            "date": "2019-01-01"
+        }
+    ]
+}
