@@ -116,7 +116,7 @@ app.get('/blogs/:id', async (req, res) => {
     if (blog) {
         res.send({blog:fs.readFileSync(`./blogs/${blog.filename}`, 'utf-8'), ...blog})
     } else {
-        res.status(404).send('Not found')
+        res.send({status:"404", message:"Blog not found"})
     }
 })
 
