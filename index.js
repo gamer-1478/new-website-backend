@@ -109,6 +109,7 @@ app.get('/blogs', async (req, res) => {
     res.send(fs.readFileSync('./blogs.json', 'utf-8'))
 })
 
+
 app.get('/blogs/:id', async (req, res) => {
     const blogs = JSON.parse(fs.readFileSync('./blogs.json', 'utf-8'))
     console.log (blogs.blogs)
