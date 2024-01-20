@@ -1,6 +1,14 @@
 {
     "blogs": [
         {
+            "id": 2,
+            "title": "FarCry 5",
+            "description": "Today, I went to see my barber; almost 3 months had passed, but I hadn’t gotten a haircut. I am quite lazy ...",
+            "type": "Game Reviews",
+            "filename": "blog3.md",
+            "date": "20th Jan 2024"
+        },
+        {
             "id": 1,
             "title": "The Barber",
             "description": "Today, I went to see my barber; almost 3 months had passed, but I hadn’t gotten a haircut. I am quite lazy ...",
